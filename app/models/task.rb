@@ -22,7 +22,11 @@ class Task < ActiveRecord::Base
     task
   end
 
+  def complete?
+    complete
+  end
+
   def to_s
-    return "#{display_id}.\t[#{complete ? 'X' : ' ' }]\t#{description}"
+    return "#{description}\t#{complete ? '[COMPLETE]' : ' ' }"
   end
 end

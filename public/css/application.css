@@ -1,8 +1,10 @@
 .container {
+  font-family: Avenir;
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  background-color: #ecf0f1;
 }
 
 ul {
@@ -10,6 +12,8 @@ ul {
 }
 
 li {
+  font-family: Athelas;
+  font-size: 1.25em;
   border-top: 1px solid black;
   padding: 5px;
 }
@@ -19,8 +23,23 @@ th {
 }
 
 .btn {
+  font-family: Helvetica;
+  font-size: 0.85em;
   float: right;
+  /*color: #e67e22;*/
   margin: 5px;
+}
+
+.btn-complete {
+  color: #e67e22;
+}
+
+.btn-delete {
+  color: #e74c3c;
+}
+
+.add_description {
+  width: 80%;
 }
 
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
