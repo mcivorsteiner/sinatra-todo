@@ -1,0 +1,26 @@
+.container {
+  margin: 20px auto;
+  width: 800px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border-top: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+}
+
+.btn {
+  float: right;
+  margin: 5px;
+}
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}

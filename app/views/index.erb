@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Welcome to Todo-nation!</h1>
+
+  <h2>All Current Tasks:</h2>
+  <ul>
+  <% @tasks.each_with_index do |task, index|  %>
+      <li class="clearfix">
+        <%= task %>
+        <!-- <a href="/delete/<%= index+1%>">Delete Task</a> -->
+        <form class = "btn"action="/complete/<%= index+1 %>" method="post">
+          <input type="submit" value="Complete Task" name="complete">
+        </form>
+
+        <form class="btn" action="/delete/<%= index+1 %>" method="post">
+          <input type="submit" value="Delete Task" name="delete">
+        </form>
+        
+      </li>
+  <% end %>
+  </ul>
+  <h3>Add Additional Task Below:</h3>
+  <form action="/" method="post">
+    <input type="text" name="new_task_description">
+    <input type="submit">
+  </form>
+</div>
