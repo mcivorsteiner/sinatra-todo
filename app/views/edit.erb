@@ -1,0 +1,9 @@
+<div class="container">
+<h3>Edit Task Description</h3>
+<form action="/tasks/<%= @task.display_id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    
+    <input class="text-input-box" value="<%= @task.description %>" type="text" name="edit_task">
+    <input type="submit">
+</form>
+</div>

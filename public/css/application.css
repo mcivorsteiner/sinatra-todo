@@ -18,6 +18,10 @@ li {
   padding: 5px;
 }
 
+li:last-child{
+  border-bottom: 1px solid black;
+}
+
 th {
   text-align: left;
 }
@@ -38,7 +42,7 @@ th {
   color: #e74c3c;
 }
 
-.add_description {
+.text-input-box {
   width: 80%;
 }
 

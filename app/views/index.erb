@@ -3,16 +3,22 @@
 
   <h2>All Current Tasks:</h2>
   <ul>
-  <% @tasks.each_with_index do |task, index|  %>
+  <% @tasks.each do |task|  %>
       <li class="clearfix">
         <%= task %>
-        <!-- <a href="/delete/<%= index+1%>">Delete Task</a> -->
-        <form class="btn btn-delete" action="/delete/<%= index+1 %>" method="post">
+        <form class="btn btn-delete" action="/tasks/<%= task.display_id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete" name="delete">
         </form>
-        <form class = "btn btn-complete"action="/complete/<%= index+1 %>" method="post">
+
+
+        <form class = "btn btn-complete"action="/tasks/<%= task.display_id %>/complete" method="post">
+          <input type="hidden" name="_method" value="put">
+
           <input type="submit" value="Complete" name="complete">
         </form>
+
+        <a href="/tasks/<%= task.display_id %>/edit">Edit</a>
 
        
         
@@ -20,8 +26,8 @@
   <% end %>
   </ul>
   <h3>Add Additional Task Below:</h3>
-  <form action="/" method="post">
-    <input class="add_description" type="text" name="new_task_description">
+  <form action="/tasks" method="post">
+    <input class="text-input-box" type="text" name="new_task_description">
     <input type="submit">
   </form>
 </div>
