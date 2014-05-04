@@ -3,8 +3,8 @@ get '/' do
 end
 
 get '/tasks' do
-  # Task.set_display_ids
   @tasks = Task.all
+  @tasks.sort! { |a,b| a.id <=> b.id }
   erb :index
 end
 
@@ -13,25 +13,24 @@ post '/tasks' do
   erb :_task_display, locals: {task: @task}, layout: false
 end
 
-delete '/tasks/:id' do
-  @task = Task.delete(params[:id]).
-  redirect '/'
-end
-
 put '/tasks/:id/complete' do
   @task = Task.find(params[:id])
   @task.update_attribute(:complete, true)
-  p @task
   content_type :json
   params[:id].to_json
 end
 
-get '/tasks/:id/edit' do
+put '/tasks/:id/edit' do
   @task = Task.find(params[:id])
-  erb :edit
+  @task.update_attribute(:description, params[:description])
+  data = { task_id: @task.id, description: params[:description] }
+  content_type :json
+  data.to_json
 end
 
-put '/tasks/:id' do
- Task.find(params[:id]).update_attribute(:description, params[:edit_task])
- redirect '/tasks'
-end 
+delete '/tasks/:id' do
+  @task = Task.find(params[:id])
+  @task.destroy
+  content_type :json
+  params[:id].to_json
+end

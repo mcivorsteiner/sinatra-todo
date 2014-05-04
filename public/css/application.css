@@ -32,22 +32,35 @@ th {
 
 .btn {
   font-family: Helvetica;
-  font-size: 0.85em;
+  font-size: 0.80em;
   float: right;
-  /*color: #e67e22;*/
   margin: 5px;
 }
 
-.complete {
-  color: #e67e22;
+.complete button, .delete button {
+  font-weight: 500;
+  /*border: 0;*/
+  /*border-radius: 5px;*/
+  /*padding: 5px;*/
 }
 
-.delete {
+.complete button {
+  color: #e67e22;
+}
+.delete button {
   color: #e74c3c;
 }
 
 .text-input-box {
   width: 80%;
+}
+
+.task-edit-input {
+  width: 60%;
+}
+
+.hidden {
+  display: none;
 }
 
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
