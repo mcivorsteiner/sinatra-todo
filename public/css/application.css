@@ -22,6 +22,10 @@ li:last-child{
   border-bottom: 1px solid black;
 }
 
+.task_description.completed {
+  text-decoration: line-through;
+}
+
 th {
   text-align: left;
 }
@@ -34,11 +38,11 @@ th {
   margin: 5px;
 }
 
-.btn-complete {
+.complete {
   color: #e67e22;
 }
 
-.btn-delete {
+.delete {
   color: #e74c3c;
 }
 

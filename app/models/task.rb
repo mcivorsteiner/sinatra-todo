@@ -6,9 +6,8 @@ class Task < ActiveRecord::Base
     end
   end
 
-  def self.complete(display_id)
-    task = Task.find_by_display_id(display_id)
-    task.update_attribute(:complete, true)
+  def complete!
+  complete = true    
     task
   end
 

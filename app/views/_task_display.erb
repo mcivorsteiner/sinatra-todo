@@ -1,0 +1,18 @@
+<li class="task clearfix" data-task-id="<%= task.id %>">
+  <text class="<%= task_classes(task) %>"> <%= task.description %></text>
+
+  <form class="btn delete" action="/tasks/<%= task.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete" name="delete">
+  </form>
+
+
+  <form class = "btn complete"action="/tasks/<%= task.id %>/complete" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <input type="submit" value="Complete" name="complete">
+  </form>
+
+  <a href="/tasks/<%= task.id %>/edit">Edit</a>
+
+</li>
